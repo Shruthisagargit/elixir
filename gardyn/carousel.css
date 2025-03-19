@@ -1,0 +1,503 @@
+/* FONTS */
+@import url(clashdisplay.css);
+
+/* VARIABLES */
+:root {
+    --c-dark: #ffffff;
+    --c-brand: #165c1f;
+    --c-brand-light: #8ae287;
+    --c-brand-rgb: 78, 87, 212;
+    --c-body: #ffffff;
+    --font-base: "ClashDisplay", sans-serif;
+    --box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.603);
+    --transition: all 0.5s ease;
+ 
+}
+html{
+    scroll-behavior: smooth;
+}
+.text-dark{
+    color: #000 !important;
+}
+p{
+    font-size: x-large;
+}
+.fs-32{
+    font-size: 24px;
+}
+.fs-36{
+    font-size: 36px;
+}
+.fs-56{
+    font-size: 56px;
+}
+/* RESET & HELPERS */
+body {
+    font-family: var(--font-base);
+    line-height: 1.7;
+    color: black;
+    background-color: #fafdff;
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+    transition: var(--transition);
+}
+
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section-padding {
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+.theme-shadow {
+    box-shadow: var(--box-shadow);
+}
+
+/* IMAGE ZOOM */
+.image-zoom {
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.image-zoom-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.image-zoom-wrapper img {
+    transition: var(--transition);
+}
+
+.image-zoom:hover .image-zoom-wrapper img {
+    transform: scale(0.8);
+}
+
+
+/* NAVBAR */
+/* Reset some default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+
+
+/* Remove default body margin & padding */
+html, body {
+   
+    overflow-x: hidden;
+}
+
+header.smaller {
+    background: rgb(20, 71, 33);
+}
+
+#topbar {
+    padding: 10px 0;
+    font-size: 11px;
+    color: #fff;
+    background: #064700;
+}
+
+.header-main {
+    background: rgb(255, 255, 255);
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* NAVBAR */
+#navbar {
+    position: fixed;
+    top: 70px; /* Positioned below header */
+    width: 100%;
+    background: var(--c-brand) !important;
+    z-index: 998;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    transition: background 0.5s ease-in-out !important;
+}
+
+.navbar-container {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #058b00cb;
+}
+
+/* DROPDOWN MENU */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgb(255, 255, 255);
+    padding: 10px 0;
+    display: none;
+    width: 150px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: black;
+}
+
+.dropdown-menu a:hover {
+    background: #114e17c2;
+}
+
+/* MENU BUTTON */
+.menu-btn {
+    display: none; /* Hidden by default */
+    background: var(--c-brand) !important;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* RESPONSIVE MENU */
+@media (max-width: 991px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgb(0, 65, 16);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+        align-items: center;
+        
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-btn {
+        display: block; /* Show button on small screens */
+    }
+}
+/* GET IN TOUCH BUTTON */
+.get-in-touch {
+    text-decoration: none;
+    padding: 8px 15px;
+    border: 2px solid white;
+    color: white;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.get-in-touch:hover {
+    background: white;
+    color: rgb(20, 146, 20);
+}
+
+/* When Scrolled - Background Becomes Solid */
+#navbar.scrolled {
+    background: var(--c-brand); /* Dark background */
+    transition: background 0.s ease-in-out;
+    top: 0 !important;
+    transition: 0.5s ease-in-out;
+}
+#navbar {
+    position: fixed;
+    top: 51px; /* Starts below the header */
+    width: 100%;
+    background: rgba(255, 255, 255, 0); /* Transparent initially */
+
+
+    z-index: 999;
+}
+
+/* NAVBAR when scrolled */
+.scrolled-navbar {
+    top: 0px !important;
+    background: var(--c-brand) !important; /* Visible background on scroll */
+}
+.scrolled-header {
+transition: top 1s ease-in-out !important;
+   
+    display: none !important;
+}
+
+/* Social Icons */
+.social-icons a {
+    color: #fff;
+    margin-right: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: #e4e4e4;
+}
+
+/* Logo */
+#logo img {
+    height: 60px;
+    transition: height 0.3s ease-in-out;
+}
+
+header.smaller #logo img {
+    height: 50px;
+}
+#main-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: top 0.7 s ease-in-out;
+    z-index: 999; /* Ensure it's above other elements */
+}
+.db {
+    background: url(./images/2025.jpg );
+    background-position: center;
+    background-size: cover;
+    transition: background 1s ease-in-out;
+}
+
+/* Project card container */
+.project-card {
+    background: rgba(255, 255, 255, 0.13); /* Transparent effect */
+    backdrop-filter: blur(10px); /* Blur effect */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.555);
+    animation: fadeInDown 0.9s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Project content alignment */
+.project-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Title styling */
+.project-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffffbe;
+}
+
+* General Styles */
+.jarallax {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0; /* Adjust padding as needed */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff; /* Ensure text is light-colored */
+    text-align: center;
+}
+.jarallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.jarallax-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.gallery-section {
+    position: relative;
+    background: #fff;
+    padding: 0px 0;
+    text-align: center;
+}
+
+.gallery-container {
+    width: 100%;
+    margin: 0 auto;
+    gap: 0;
+}
+
+.gallery-carousel img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+
+}
+
+/* Custom Navigation */
+.owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.owl-prev, .owl-next {
+    pointer-events: all;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.owl-prev:hover, .owl-next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Ensure no gap between sections */
+.gallery-section {
+    margin: 0;
+    padding: 0;
+}
+.gallery-container {
+    width: 100%;
+    height: auto;
+    margin: 0 auto; /* Center alignment */
+    margin-bottom: 0;
+
+}
+
+.gallery {
+    width: 100%;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+/* Remove extra margins from hero section */
+#hero {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Remove extra margins from footer */
+.footer {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Ensure Footer Doesn't Touch the Button */
+
+
+/* FOOTER */
+.footer {
+    position: relative;
+    background: url('./images/back.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 80px 0;
+    margin-top: -28px;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+    z-index: 1;
+}
+
+.footer-top, .footer-bottom {
+    position: relative;
+    z-index: 2; /* Ensures content is above background */
+}
+
+.footer h5 {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 22px;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer ul li a:hover {
+    color: #005500;
+}
+
+.footer .social-icons a {
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.footer .social-icons a:hover {
+    color: #00ff99;
+}
